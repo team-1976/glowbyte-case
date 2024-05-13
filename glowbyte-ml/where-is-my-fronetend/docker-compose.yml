@@ -1,0 +1,30 @@
+version: '2.4'
+
+services:
+  streamlit:
+    pull_policy: always
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - '8501:8501'
+    volumes:
+      - './data:/usr/src/app/data:delegated'
+      - './src:/usr/src/app/project:delegated'
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+
+#   db:
+#     image: postgres:13-alpine
+#     volumes:
+#       - dev-db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_DB=postgres
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=postgres
+#     ports:
+#       - 5432:5432
+
+# volumes:
+#     dev-db-data:
