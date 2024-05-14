@@ -24,13 +24,14 @@ true_values = new_data.iloc[:, 1]
 print(true_values)
 
 # Make predictions on the new data
-
+predictions = model.predict(new_data_scaled)
+print(predictions)
 
 predictions_df = pd.DataFrame(predictions, columns=['Predictions'])
 
 # Save the predictions to a new CSV file
 #predictions_df.to_csv('predictions.csv', index=False)
 # Calculate the mean squared error (MSE)
-#mae = mean_absolute_error(true_values, predictions)
+mae = mean_absolute_error(true_values, predictions)
 
 print("MAE:", mae)
