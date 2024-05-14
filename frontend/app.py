@@ -1,16 +1,11 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-
 
 
 # Заголовок приложения
-st.caption('1976сантиметровые')
-st.title('GlowByte-Внедряем решения BI и Big Data в России')
+st.caption('1976 - сантиметровые')
+st.title('GlowByte - Внедряем решения BI и Big Data в России')
 st.caption('Помогаем Бизнесу принимать взвешенные решения на основе данных')
-
 
 # Загрузка CSV файла
 uploaded_file = st.file_uploader("Target_train", type="csv", key="unique_key_1", accept_multiple_files=False, help="Пожалуйста, загрузите CSV файл.")
